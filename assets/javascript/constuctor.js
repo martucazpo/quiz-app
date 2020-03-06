@@ -1,30 +1,21 @@
+import answers from './answer.js';
+
+
 class Question {
-        constructor(content,text,src,alt,answers=[{}]){
-            this.content = content;
-            this.text = text;
-            this.src = src;
-            this.alt = alt;
-            this.answers = answers;
-        }
+    constructor(content, text, src, alt, answers = [{}]) {
+        this.content = content;
+        this.text = text;
+        this.src = src;
+        this.alt = alt;
+        this.answers = answers;
     }
-    
-    class Answer {
-        constructor(text,correct,isTrue){
-            this.text = text;
-            this.correct = correct;
-            this.isTrue = isTrue;
-        }
-    }
-    
-    let four = new Answer(4,'correct',true);
-    let twentyTwo = new Answer(22,'wrong',false);
-    let six = new Answer(6,'wrong',false);
-    let eight = new Answer(8,'wrong',false);
-    
-    let mathAnsw1 = [four,twentyTwo,six,eight];
-    
-    const twoPlusTwo = new Question('Math', "What is two plus two?",'assets/images/antoine-dautry-05A-kdOH6Hw-unsplash.jpg', 'image of mathmatical text', mathAnsw1)
+}
 
-    export const questions = [twoPlusTwo];
 
-    export default questions;
+const twoPlusTwo = new Question('Math', "What is two plus two?", 'assets/images/antoine-dautry-05A-kdOH6Hw-unsplash.jpg', 'image of mathmatical text', answers[0])
+
+const whoThatDog = new Question("Animals", "There was a farmer had a dog, and _____ was his name-o?", 'assets/images/dan-cook-MCauAnBJeig-unsplash.jpg', 'image of a donkey smiling', answers[1]);
+
+export const questions = [whoThatDog, twoPlusTwo];
+
+export default questions;
